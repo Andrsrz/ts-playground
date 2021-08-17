@@ -25,7 +25,7 @@ rand = 2;
 console.log(addNumber(num, 3));
 console.log(useString('Andres'));
 
-// Type assertion with unkown types
+// Type assertion and type guards
 if(typeof rand === 'string')
 	print(rand as string);
 else
