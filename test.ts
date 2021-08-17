@@ -6,7 +6,8 @@ function useString(name: string): string {
 	return `Your name is ${name}`;
 }
 
-function print(output: string): void {
+// Function that can get union types, one or another
+function print(output: string | number): void {
 	console.log(`Your output is: ${output}`);
 }
 
@@ -24,6 +25,7 @@ rand = 2;
 
 console.log(addNumber(num, 3));
 console.log(useString('Andres'));
+print(num);
 
 // Type assertion and type guards
 if(typeof rand === 'string')
