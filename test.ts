@@ -32,3 +32,10 @@ if(typeof rand === 'string')
 	print(rand as string);
 else
 	print('Error - rand should be string');
+
+// Literal types
+type dice = 1 | 2 | 3 | 4 | 5 | 6;
+let diceRoll: dice;
+diceRoll = 2;
+diceRoll = 6;
+// diceRoll = 0; ERROR
