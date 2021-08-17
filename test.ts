@@ -6,7 +6,7 @@ function useString(name: string): string {
 	return `Your name is ${name}`;
 }
 
-function print(output: number): void {
+function print(output: string): void {
 	console.log(`Your output is: ${output}`);
 }
 
@@ -19,6 +19,14 @@ enum Counter {
 
 let num: Counter = Counter.Two;
 
-console.log(addNumber(2, 3));
+let rand: unknown = 'Unkown type';
+rand = 2;
+
+console.log(addNumber(num, 3));
 console.log(useString('Andres'));
-print(num);
+
+// Type assertion with unkown types
+if(typeof rand === 'string')
+	print(rand as string);
+else
+	print('Error - rand should be string');
