@@ -39,3 +39,29 @@ let diceRoll: dice;
 diceRoll = 2;
 diceRoll = 6;
 // diceRoll = 0; ERROR
+
+// Arrays
+function getAverage(arr: number[]): number {
+	let average: number = 0;
+	let sum: number = 0;
+
+	arr.forEach(num => {
+		sum += num;
+	});
+
+	average = sum / arr.length;
+
+	return average;
+}
+
+let someArr: Array<number> = [3, 3, 3];
+console.log(getAverage([1, 2, 3, 4]));
+console.log(getAverage(someArr));
+
+// Tuples (are array of objects?)
+function sayWoof(dog: [string, number]): string{
+	return dog[0] + ' is ' + dog[1] + ' years old and it wants you to say: Woof!';
+}
+
+let myDog: [string, number] = ['Coqueta', 2];
+console.log(sayWoof(myDog));
