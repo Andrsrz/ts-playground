@@ -1,0 +1,22 @@
+{
+  "name": "ts-playground",
+  "version": "1.0.0",
+  "description": "Me learning TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrsrz/ts-playground.git"
+  },
+  "author": "Andres Ruiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andrsrz/ts-playground/issues"
+  },
+  "homepage": "https://github.com/Andrsrz/ts-playground#readme",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
