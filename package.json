@@ -4,7 +4,10 @@
   "description": "Me learning TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,7 @@
   },
   "homepage": "https://github.com/Andrsrz/ts-playground#readme",
   "devDependencies": {
-    "typescript": "^4.4.4"
+    "typescript": "^4.3.2",
+    "vite": "^2.6.4"
   }
 }
