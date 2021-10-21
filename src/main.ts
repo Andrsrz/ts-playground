@@ -28,7 +28,7 @@ console.log(useString('Andres'));
 print(num);
 
 // Type assertion and type guards
-if(typeof rand === 'string')
+if (typeof rand === 'string')
 	print(rand as string);
 else
 	print('Error - rand should be string');
@@ -59,9 +59,29 @@ console.log(getAverage([1, 2, 3, 4]));
 console.log(getAverage(someArr));
 
 // Tuples (are array of objects?)
-function sayWoof(dog: [string, number]): string{
+function sayWoof(dog: [string, number]): string {
 	return dog[0] + ' is ' + dog[1] + ' years old and it wants you to say: Woof!';
 }
 
 let myDog: [string, number] = ['Coqueta', 2];
 console.log(sayWoof(myDog));
+
+// Objects
+const person: {
+	name: string;
+	age: number;
+	hobbies: string[];
+} = {
+	name: 'Andres',
+	age: 26,
+	hobbies: ['Sports', 'Videogames']
+};
+
+let favoriteActivities: string[];
+favoriteActivities = ['Videogames'];
+
+console.log(person.age);
+
+person.hobbies.forEach(hobby => {
+	console.log(hobby);
+});
