@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "build-watch": "tsc --outDir './build' src/main.ts --watch"
+    "build-watch": "tsc --outDir './build' --watch"
   },
   "repository": {
     "type": "git",

@@ -97,4 +97,4 @@ function generateError(message: string, code: number): never {
 	throw { message, code };
 }
 
-generateError('This is an error', 500);
+generateError('This is an error message', 500);
