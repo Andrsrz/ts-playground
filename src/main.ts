@@ -91,3 +91,10 @@ console.log(person.age);
 person.hobbies.forEach(hobby => {
 	console.log(hobby);
 });
+
+// Function that returns never
+function generateError(message: string, code: number): never {
+	throw { message, code };
+}
+
+generateError('This is an error', 500);
