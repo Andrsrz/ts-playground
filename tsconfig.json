@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "es6",
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": [
@@ -12,11 +12,13 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "noEmit": true,
+    "noEmitOnError": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "outDir": "./build"
+    "outDir": "./build",
+    "rootDir": "./src",
+    "removeComments": true
   },
   "include": [
     "./src"
