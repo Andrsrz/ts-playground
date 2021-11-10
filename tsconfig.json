@@ -15,9 +15,13 @@
     "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "outDir": "./build"
   },
   "include": [
     "./src"
+  ],
+  "exclude": [
+    "node_modules" // Default
   ]
 }
