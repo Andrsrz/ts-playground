@@ -6,10 +6,16 @@ function useString(name: string): string {
 	return `Your name is ${name}`;
 }
 
+// Type Alias
+type StringAndNumber = string | number;
+
 // Function that can get union types, one or another
-function print(output: string | number): void {
+function printTest(output: StringAndNumber): void {
 	console.log(`Your output is: ${output}`);
 }
+
+let printTestAsFunc: (a: StringAndNumber) => void;
+printTestAsFunc = printTest;
 
 /* Enums */
 enum Counter {
@@ -25,13 +31,13 @@ rand = 2;
 
 console.log(addNumber(num, 3));
 console.log(useString('Andres'));
-print(num);
+printTestAsFunc(num);
 
 // Type assertion and type guards
 if (typeof rand === 'string')
-	print(rand as string);
+	printTest(rand as string);
 else
-	print('Error - rand should be string');
+	printTest('Error - rand should be string');
 
 // Literal types
 type dice = 1 | 2 | 3 | 4 | 5 | 6;
