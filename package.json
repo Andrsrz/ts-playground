@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Andrsrz/ts-playground.git"
+    "url": "git+https://github.com/andrdc/ts-playground.git"
   },
   "author": "Andres Ruiz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Andrsrz/ts-playground/issues"
+    "url": "https://github.com/andrdc/ts-playground/issues"
   },
-  "homepage": "https://github.com/Andrsrz/ts-playground#readme",
+  "homepage": "https://github.com/andrdc/ts-playground#readme",
   "devDependencies": {
     "typescript": "^4.3.2",
     "vite": "^2.6.4"
