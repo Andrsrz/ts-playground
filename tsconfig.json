@@ -2,11 +2,11 @@
   "compilerOptions": {
     "target": "es6",
     "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    // "module": "ESNext",
+    // "lib": [
+    //   "ESNext",
+    //   "DOM"
+    // ],
     "moduleResolution": "Node",
     "strict": true,
     "sourceMap": true,
