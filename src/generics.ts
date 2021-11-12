@@ -18,3 +18,29 @@ function merge<T extends object, U extends object>(objA: T, objB: U) {
 
 const merged = merge({ name: 'Andres', hobbies: ['Games', 'Sports'] }, { age: 26 });
 console.info(merged);
+
+// More practice
+interface Lenghty {
+	length: number
+}
+
+function countAndDescribe<T extends Lenghty>(element: T) {
+	let description = 'Got no value';
+
+	if (element.length === 1) {
+		description = 'Got 1 element';
+	} else if (element.length > 1) {
+		description = `Got ${element.length} elements`;
+	}
+
+	return [element, description];
+}
+
+console.info(countAndDescribe('This is an element to test upper function'));
+
+// keyof
+function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U) {
+	return `Value ${obj[key]}`;
+}
+
+console.info(extractAndConvert({ name: 'Andres', age: 26 }, 'age'));
