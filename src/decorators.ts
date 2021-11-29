@@ -1,3 +1,4 @@
+// Decorators can be used in classes, properties, accessors, methods and method's arguments
 // Decorators often use the first letter as upper case
 function Logger(logString: string) {
 	return function (constructor: Function) {
@@ -7,13 +8,18 @@ function Logger(logString: string) {
 }
 
 function WithTemplate(template: string, hookId: string) {
-	return function (constructor: any) {
-		console.info('Rendering template');
-		const hookEl = document.getElementById(hookId);
-		const persona = new constructor();
-		if (hookEl) {
-			hookEl.innerHTML = template;
-			hookEl.querySelector('h3')!.textContent = persona.nombre;
+	return function <T extends { new(...args: any[]): { nombre: string } }>(originalConstructor: T) {
+		return class extends originalConstructor {
+			constructor(..._: any[]) {
+				super();
+				console.info('Rendering template');
+				const hookEl = document.getElementById(hookId);
+
+				if (hookEl) {
+					hookEl.innerHTML = template;
+					hookEl.querySelector('h3')!.textContent = this.nombre;
+				}
+			}
 		}
 	}
 }
@@ -39,5 +45,4 @@ class Persona {
 	}
 }
 
-// const persona = new Persona();
-// console.info(persona);
+const persona = new Persona();
