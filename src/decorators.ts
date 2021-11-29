@@ -30,11 +30,23 @@ function LogProperty(target: any, propertyName: string | Symbol) {
 	console.info(target, propertyName);
 }
 
+function Autobind(target: any, method: string, descriptor: PropertyDescriptor) {
+	const originalMethod = descriptor.value;
+	// Returns a PropertyDescriptor object
+	return {
+		configurable: true,
+		enumerable: false,
+		get() {
+			return originalMethod.bind(this);
+		}
+	};
+}
+
 // This should point to a function (not executing it)
 // If using it as a decorator factory we can pass in N arguments
 // Decorators execute when the class is defined
 @Logger('Loggin - Persona')
-@WithTemplate('<h3>Decorators Title</h3>', 'decorators')
+@WithTemplate('<h3>Decorators Title</h3><button>Say hi</button>', 'decorators')
 // Execute bottom-up
 class Persona {
 	@LogProperty
@@ -43,6 +55,12 @@ class Persona {
 	constructor() {
 		console.info('Creating person object ...');
 	}
+
+	@Autobind
+	sayHi() {
+		console.info(`Hi ${this.nombre}`);
+	}
 }
 
 const persona = new Persona();
+document.querySelector('button')!.addEventListener('click', persona.sayHi);
