@@ -6,10 +6,22 @@ function Logger(logString: string) {
 	}
 }
 
+function WithTemplate(template: string, hookId: string) {
+	return function (constructor: any) {
+		const hookEl = document.getElementById(hookId);
+		const persona = new constructor();
+		if (hookEl) {
+			hookEl.innerHTML = template;
+			hookEl.querySelector('h3')!.textContent = persona.nombre;
+		}
+	}
+}
+
 // This should point to a function (not executing it)
 // If using it as a decorator factory we can pass in N arguments
 // Decorators execute when the class is defined
-@Logger('Loggin - Persona')
+// @Logger('Loggin - Persona')
+@WithTemplate('<h3>Decorators Title</h3>', 'decorators')
 class Persona {
 	nombre = 'Andres';
 
