@@ -18,6 +18,12 @@ function WithTemplate(template: string, hookId: string) {
 	}
 }
 
+// object structure, property name
+function LogProperty(target: any, propertyName: string | Symbol) {
+	console.info('Property decorator');
+	console.info(target, propertyName);
+}
+
 // This should point to a function (not executing it)
 // If using it as a decorator factory we can pass in N arguments
 // Decorators execute when the class is defined
@@ -25,6 +31,7 @@ function WithTemplate(template: string, hookId: string) {
 @WithTemplate('<h3>Decorators Title</h3>', 'decorators')
 // Execute bottom-up
 class Persona {
+	@LogProperty
 	nombre = 'Andres';
 
 	constructor() {
