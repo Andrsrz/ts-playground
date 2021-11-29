@@ -8,6 +8,7 @@ function Logger(logString: string) {
 
 function WithTemplate(template: string, hookId: string) {
 	return function (constructor: any) {
+		console.info('Rendering template');
 		const hookEl = document.getElementById(hookId);
 		const persona = new constructor();
 		if (hookEl) {
@@ -20,8 +21,9 @@ function WithTemplate(template: string, hookId: string) {
 // This should point to a function (not executing it)
 // If using it as a decorator factory we can pass in N arguments
 // Decorators execute when the class is defined
-// @Logger('Loggin - Persona')
+@Logger('Loggin - Persona')
 @WithTemplate('<h3>Decorators Title</h3>', 'decorators')
+// Execute bottom-up
 class Persona {
 	nombre = 'Andres';
 
