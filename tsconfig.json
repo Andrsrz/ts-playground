@@ -18,7 +18,8 @@
     "noImplicitReturns": true,
     "outDir": "./build",
     "rootDir": "./src",
-    "removeComments": true
+    "removeComments": true,
+    "experimentalDecorators": true
   },
   "include": [
     "./src"
